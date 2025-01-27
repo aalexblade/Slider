@@ -3,16 +3,20 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-img {
-  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to bottom, #87cefa, #4682b4);
 }
 .slider-container {
   position: relative;
-  max-width: 800px;
-  margin: auto;
+  max-width: 320px;
+  border-radius: 20px;
+  background: white;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   overflow: hidden;
+  padding: 20px;
 }
 .gallery {
   display: flex;
@@ -21,43 +25,49 @@ img {
 .gallery img {
   width: 100%;
   border-radius: 10px;
-  object-fit: cover;
-  border: 2px solid #fff;
 }
-.arrows {
-  position: absolute;
-  /* top: 50%; */
-  width: 100%;
-  display: flex;
-  margin-top: 24px;
-
+.controls {
   display: flex;
   justify-content: center;
-
-  /* justify-content: space-around; */
-  justify-content: space-between;
-  transform: translateY(-50%);
+  align-items: center;
+  padding: 10px 0;
 }
-.arrows button {
-  background: rgba(0, 0, 0, 0.5);
-  border: none;
-  color: white;
-  padding: 10px;
+
+.arrow {
+  width: 25px;
+  height: 33px;
   cursor: pointer;
-  margin-right: 50px;
+}
+
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrows button {
+  background: transparent;
+  border: none;
+  color: #000;
+  font-size: 24px;
+  cursor: pointer;
 }
 .indicators {
-  text-align: center;
-  padding: 20px;
+  display: flex;
+  justify-content: center;
+  margin: 0 10px;
 }
 .indicator {
   height: 12px;
   width: 12px;
-  background-color: #bbb;
+  background-color: #96b3eb;
   border-radius: 50%;
-  display: inline-block;
   margin: 0 5px;
+  cursor: pointer;
 }
 .indicator.active {
-  background-color: #717171;
+  background-color: #fff;
 }

@@ -1,37 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Game Gallery Slider</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <div class="slider-container">
-      <div class="gallery">
-        <img src="./img/gallerry1.jpg" alt="Game Screenshot 1" />
-        <img src="./img/gallerry2.jpg" alt="Game Screenshot 2" />
-        <img src="./img/gallerry3.jpg" alt="Game Screenshot 3" />
-        <img src="./img/gallerry4.jpg" alt="Game Screenshot 4" />
-        <img src="./img/gallerry5.jpg" alt="Game Screenshot 5" />
-      </div>
-      <div>
-        <div class="arrows">
-          <button onclick="prevSlide()">&#10094;</button>
-          <button onclick="nextSlide()">&#10095;</button>
-        </div>
-        <div class="indicators">
-          <span class="indicator active"></span>
-          <span class="indicator"></span>
-          <span class="indicator"></span>
-          <span class="indicator"></span>
-          <span class="indicator"></span>
-        </div>
-      </div>
-    </div>
-    <script src="script.js"></script>
-  </body>
-</html> -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -39,65 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Game Gallery Slider</title>
     <link rel="stylesheet" href="styles.css" />
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        background: linear-gradient(to bottom, #87cefa, #4682b4);
-      }
-      .slider-container {
-        position: relative;
-        max-width: 320px;
-        border-radius: 20px;
-        background: white;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-        overflow: hidden;
-        padding: 20px;
-      }
-      .gallery {
-        display: flex;
-        transition: transform 0.5s ease-in-out;
-      }
-      .gallery img {
-        width: 100%;
-        border-radius: 10px;
-      }
-      .controls {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 10px 0;
-      }
-      .arrows button {
-        background: transparent;
-        border: none;
-        color: #000;
-        font-size: 24px;
-        cursor: pointer;
-      }
-      .indicators {
-        display: flex;
-        justify-content: center;
-        margin: 0 10px;
-      }
-      .indicator {
-        height: 12px;
-        width: 12px;
-        background-color: #bbb;
-        border-radius: 50%;
-        margin: 0 5px;
-        cursor: pointer;
-      }
-      .indicator.active {
-        background-color: #000;
-      }
-    </style>
   </head>
   <body>
     <div class="slider-container">
@@ -110,7 +17,14 @@
         <img src="./img/gallerry5.jpg" alt="Game Screenshot 5" />
       </div>
       <div class="controls">
-        <button onclick="prevSlide()">⬅️</button>
+        <button onclick="prevSlide()">
+          <img
+            class="arrow"
+            src="./img/arrow gallery left.png"
+            alt="Next"
+            class="arrow"
+          />
+        </button>
         <div class="indicators">
           <span class="indicator active" onclick="showSlide(0)"></span>
           <span class="indicator" onclick="showSlide(1)"></span>
@@ -118,35 +32,17 @@
           <span class="indicator" onclick="showSlide(3)"></span>
           <span class="indicator" onclick="showSlide(4)"></span>
         </div>
-        <button onclick="nextSlide()">➡️</button>
+        <button onclick="nextSlide()">
+          <img
+            class="arrow"
+            src="./img/arrow gallery right.png"
+            alt="Next"
+            class="arrow"
+          />
+        </button>
       </div>
     </div>
-    <script>
-      let index = 0;
-      const slides = document.querySelectorAll('.gallery img');
-      const indicators = document.querySelectorAll('.indicator');
 
-      function showSlide(n) {
-        slides.forEach((img, i) => {
-          img.style.display = i === n ? 'block' : 'none';
-        });
-        indicators.forEach((dot, i) => {
-          dot.classList.toggle('active', i === n);
-        });
-        index = n;
-      }
-
-      function nextSlide() {
-        index = (index + 1) % slides.length;
-        showSlide(index);
-      }
-
-      function prevSlide() {
-        index = (index - 1 + slides.length) % slides.length;
-        showSlide(index);
-      }
-
-      showSlide(index);
-    </script>
+<script src="./script.js"></script>
   </body>
 </html>
