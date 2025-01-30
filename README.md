@@ -1,1 +1,1 @@
-# Slider
+# Slider Vanilla JS

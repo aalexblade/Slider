@@ -3,46 +3,70 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Game Gallery Slider</title>
+    <title>Slider</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="slider-container">
-      <h2 style="text-align: center">Gallery</h2>
-      <div class="gallery">
-        <img src="./img/gallerry1.jpg" alt="Game Screenshot 1" />
-        <img src="./img/gallerry2.jpg" alt="Game Screenshot 2" />
-        <img src="./img/gallerry3.jpg" alt="Game Screenshot 3" />
-        <img src="./img/gallerry4.jpg" alt="Game Screenshot 4" />
-        <img src="./img/gallerry5.jpg" alt="Game Screenshot 5" />
-      </div>
-      <div class="controls">
-        <button onclick="prevSlide()">
-          <img
-            class="arrow"
-            src="./img/arrow gallery left.png"
-            alt="Next"
-            class="arrow"
-          />
-        </button>
-        <div class="indicators">
-          <span class="indicator active" onclick="showSlide(0)"></span>
-          <span class="indicator" onclick="showSlide(1)"></span>
-          <span class="indicator" onclick="showSlide(2)"></span>
-          <span class="indicator" onclick="showSlide(3)"></span>
-          <span class="indicator" onclick="showSlide(4)"></span>
+    <div class="gallery-inner container">
+      <div class="gallery-wrap">
+        <h2 class="gallery-wrap-title">Gallery</h2>
+        <ul class="gallery-wrap-list gallery-row-first">
+          <li>
+            <img
+              class="gallery-wrap-item"
+              src="https://picsum.photos/id/1083/300/200"
+              alt="image 1"
+            />
+          </li>
+          <li>
+            <img
+              class="gallery-wrap-item"
+              src="https://picsum.photos/id/1083/300/200"
+              alt="image 2"
+            />
+          </li>
+        </ul>
+        <ul class="gallery-wrap-list gallery-row-second">
+          <li>
+            <img
+              class="gallery-wrap-item"
+              src="https://picsum.photos/id/108/300/200"
+              alt="image 3"
+            />
+          </li>
+          <li>
+            <img
+              class="gallery-wrap-item"
+              src="https://picsum.photos/id/13/300/200"
+              alt="image 4"
+            />
+          </li>
+          <li>
+            <img
+              class="gallery-wrap-item"
+              src="https://picsum.photos/id/10/300/200"
+              alt="image 5"
+            />
+          </li>
+        </ul>
+        <div class="controls">
+          <button id="prevSlideButton">
+            <img class="arrow1" src="./img/arrow-right.png" alt="Next" />
+          </button>
+          <div class="indicators">
+            <span class="indicator active" data-slide="0"></span>
+            <span class="indicator" data-slide="1"></span>
+            <span class="indicator" data-slide="2"></span>
+            <span class="indicator" data-slide="3"></span>
+            <span class="indicator" data-slide="4"></span>
+          </div>
+          <button id="nextSlideButton">
+            <img class="arrow" src="./img/arrow-right.png" alt="Next" />
+          </button>
         </div>
-        <button onclick="nextSlide()">
-          <img
-            class="arrow"
-            src="./img/arrow gallery right.png"
-            alt="Next"
-            class="arrow"
-          />
-        </button>
       </div>
     </div>
 
-<script src="./script.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
